@@ -1,0 +1,174 @@
+:root {
+  --dark-cyan: hsl(158, 36%, 37%);
+  --dark-cyanActive: hsl(158, 80%, 15%);
+  --dark-cyanHover: hsl(155, 35%, 15%);
+  --cream: hsl(30, 38%, 92%);
+  --very-dark-blue: hsl(212, 21%, 14%);
+  --dark-grayish-blue: hsl(228, 12%, 48%);
+  --white: hsl(0, 0%, 100%);
+}
+
+body {
+  margin: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background-color: hsl(30, 38%, 92%);
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.container {
+  width: 90%;
+  margin: 30px 1px;
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: var(--white);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+header {
+  width: 100%;
+  height: 64.86%;
+}
+main {
+  padding: 0 7%;
+  padding-bottom: 25px;
+}
+.product {
+  font-family: "Montserrat";
+  color: var(--dark-grayish-blue);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+}
+h1 {
+  font-family: "Fraunces";
+}
+.description,
+.discount {
+  color: var(--dark-grayish-blue);
+  font-family: "Montserrat";
+  font-size: 14px;
+  font-weight: 600;
+}
+.description {
+  line-height: 20px;
+}
+.pricetag {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+.price {
+  font-family: "Fraunces";
+  color: var(--dark-cyan);
+  font-size: 35px;
+}
+.discount {
+  margin-left: 20px;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  height: 50px;
+  border: none;
+  border-radius: 5px;
+  font-family: "Montserrat";
+  font-weight: 600;
+  font-size: 14px;
+  background-color: var(--dark-cyan);
+  color: var(--white);
+}
+
+button:hover {
+  background-color: var(--dark-cyanHover);
+  cursor: pointer;
+}
+button:active {
+  background-color: var(--dark-cyanActive);
+  cursor: pointer;
+}
+
+footer {
+  bottom: 100;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+}
+
+@media screen and (width>650px) {
+  body {
+    grid-template-areas:
+      "card"
+      "footer";
+  }
+  .container {
+    width: 540px;
+    height: 400px;
+    margin: 0;
+    grid-area: card;
+    display: grid;
+    grid-template-areas: "header main";
+  }
+
+  header {
+    grid-area: header;
+    margin: 0;
+    max-width: 270px;
+    height: 100%;
+  }
+  main {
+    grid-area: main;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  main > button,
+  p,
+  h1,
+  div {
+    width: 90%;
+  }
+
+  h1 {
+    font-size: 25px;
+    line-height: 25px;
+  }
+  .product {
+    margin-top: 30px;
+    font-size: 10px;
+    font-weight: 700;
+  }
+  .description {
+    font-size: 10px;
+  }
+  .pricetag {
+    margin-top: 20px;
+  }
+  .price {
+    font-size: 25px;
+  }
+  .discount {
+    font-size: 10px;
+  }
+  button {
+    height: 40px;
+  }
+  footer {
+    grid-area: footer;
+  }
+}
