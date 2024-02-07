@@ -14,7 +14,7 @@ body {
   height: 100dvh;
   background-color: hsl(30, 38%, 92%);
   display: grid;
-  align-items: center;
+  align-items: flex-end;
   justify-items: center;
 }
 
@@ -99,6 +99,7 @@ button:active {
 
 footer {
   bottom: 100;
+  align-self: center;
 }
 
 .attribution {
